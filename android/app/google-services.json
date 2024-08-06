@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "923260868235",
+    "project_id": "finddoctor-50ec6",
+    "storage_bucket": "finddoctor-50ec6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923260868235:android:17ae0d905db9c4d238a68e",
+        "android_client_info": {
+          "package_name": "com.example.doctor_book"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMzsfsIw3fll4yh07O0_16hphgoDQXebw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
