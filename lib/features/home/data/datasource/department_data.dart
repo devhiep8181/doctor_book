@@ -1,0 +1,23 @@
+List<String> department = [
+  'Nội Tổng Quát',
+  'Da Liễu',
+  'Nhi',
+  'Sản',
+  'Tim Mạch',
+  'Hô Hấp',
+  'Thần Kinh',
+  'Tiêu Hóa',
+  'Thận - Tiết Niệu',
+  'Ngoại Tổng Quát',
+  'Tai Mũi Họng',
+  'Mắt',
+  'Răng Hàm Mặt',
+  'Ung Bướu',
+  'Nội Tiết',
+  'Cơ Xương Khớp',
+  'Hồi Sức Cấp Cứu',
+  'Y Học Cổ Truyền',
+  'Tâm Thần',
+  'Xét Nghiệm',
+  'Chẩn Đoán Hình Ảnh'
+];
