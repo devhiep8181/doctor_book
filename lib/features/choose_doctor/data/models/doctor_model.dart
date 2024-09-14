@@ -81,6 +81,7 @@ class Doctor extends Equatable {
 class WorkingHours extends Equatable {
   final String start;
   final String end;
+  
 
   const WorkingHours({
     required this.start,

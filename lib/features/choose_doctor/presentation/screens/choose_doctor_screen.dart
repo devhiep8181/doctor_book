@@ -4,6 +4,7 @@ import 'package:doctor_book/common/extension/extension_size_screen.dart';
 import 'package:doctor_book/common/widgets/custom_elevated_button.dart';
 import 'package:doctor_book/common/widgets/custom_image_view.dart';
 import 'package:doctor_book/features/choose_doctor/presentation/blocs/get_doctor/get_doctor_bloc.dart';
+import 'package:doctor_book/features/choose_doctor/presentation/screens/info_doctor_screen.dart';
 import 'package:doctor_book/features/process_schedule/presentation/screens/process_schedule_screen.dart';
 import 'package:doctor_book/routes/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -95,122 +96,120 @@ class _ChooseDoctorScreenState extends State<ChooseDoctorScreen> {
                         itemCount: state.listDoctor.length,
                         itemBuilder: (context, index) {
                           final doctor = state.listDoctor[index];
-                          return Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                        radius: 40.r,
-                                        backgroundColor: AppColors.grey200Color,
-                                        child: CustomImageView(
-                                          width: 80,
-                                          radius: BorderRadius.circular(100.r),
-                                          imagePath: doctor.profilePicture,
-                                          fit: BoxFit.fill,
-                                        )),
-                                    SizedBox(
-                                      width: 24.h,
-                                    ),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(doctor.qualification),
-                                        const SizedBox(
-                                          height: 4,
-                                        ),
-                                        Text(doctor.fullName),
-                                        const SizedBox(
-                                          height: 4,
-                                        ),
-                                        Text(
-                                            '${doctor.yearsOfExperience} năm kinh nghiệm'),
-                                        const SizedBox(
-                                          height: 4,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.r),
-                                                  color:
-                                                      AppColors.grey200Color),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
-                                                child: Text(doctor.department),
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              width: 8,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.r),
-                                                  color:
-                                                      AppColors.grey200Color),
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(4.0),
-                                                child: Text(doctor.department),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 12,
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.location_on),
-                                    Expanded(
-                                      child: Text(
-                                        'Nơi công tác: ${doctor.hospital}',
-                                        softWrap: true,
+                          return InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (_) => InfoDoctorScreen(
+                                        doctor: doctor,
+                                      )));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      CircleAvatar(
+                                          radius: 40.r,
+                                          backgroundColor:
+                                              AppColors.grey200Color,
+                                          child: CustomImageView(
+                                            width: 80,
+                                            radius:
+                                                BorderRadius.circular(100.r),
+                                            imagePath: doctor.profilePicture,
+                                            fit: BoxFit.fill,
+                                          )),
+                                      SizedBox(
+                                        width: 24.h,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 12,
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.location_on),
-                                    Expanded(
-                                      child: Text(
-                                        'Địa chỉ phòng khám: ${doctor.workAddress}',
-                                        softWrap: true,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 12,
-                                ),
-                                Align(
-                                  alignment: Alignment.centerRight,
-                                  child: SizedBox(
-                                    width: 200.w,
-                                    child: CustomElevatedButton(
-                                      onPressed: () => context.goNamed(
-                                          processSchedule,
-                                          extra: doctor),
-                                      textBtn: 'Đặt lịch ngay',
-                                    ),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(doctor.qualification),
+                                          const SizedBox(
+                                            height: 4,
+                                          ),
+                                          Text(doctor.fullName),
+                                          const SizedBox(
+                                            height: 4,
+                                          ),
+                                          Text(
+                                              '${doctor.yearsOfExperience} năm kinh nghiệm'),
+                                          const SizedBox(
+                                            height: 4,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12.r),
+                                                    color:
+                                                        AppColors.grey200Color),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(8.0),
+                                                  child:
+                                                      Text(doctor.department),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                width: 8,
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )
+                                    ],
                                   ),
-                                )
-                              ],
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.location_on),
+                                      Expanded(
+                                        child: Text(
+                                          'Nơi công tác: ${doctor.hospital}',
+                                          softWrap: true,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Row(
+                                    children: [
+                                      const Icon(Icons.location_on),
+                                      Expanded(
+                                        child: Text(
+                                          'Địa chỉ phòng khám: ${doctor.workAddress}',
+                                          softWrap: true,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: SizedBox(
+                                      width: 200.w,
+                                      child: CustomElevatedButton(
+                                        onPressed: () => context.goNamed(
+                                            processSchedule,
+                                            extra: doctor),
+                                        textBtn: 'Đặt lịch ngay',
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },

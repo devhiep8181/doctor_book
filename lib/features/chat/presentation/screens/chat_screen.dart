@@ -3,6 +3,7 @@ import 'package:doctor_book/common/app_theme/app_styles.dart';
 import 'package:doctor_book/common/extension/extension_size_screen.dart';
 import 'package:doctor_book/common/widgets/custom_image_view.dart';
 import 'package:doctor_book/features/chat/presentation/screens/chat_inside_screen.dart';
+import 'package:doctor_book/features/choose_doctor/data/models/doctor_model.dart';
 import 'package:doctor_book/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       return InkWell(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (_) => const ChatInsideScreen()));
+                              builder: (_) =>  const ChatInsideScreen(doctor: Doctor(fullName: '', qualification: '', department: '', workAddress: '', yearsOfExperience: 1, profilePicture: '', workingHours: WorkingHours(start: '9:00', end: "10:00"), startDay: 1, endDay: 5, email: '', hospital: ''),)));
                         },
                         child: Container(
                           margin: const EdgeInsetsDirectional.symmetric(
