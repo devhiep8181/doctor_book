@@ -38,7 +38,7 @@ class _ChatInsideScreenState extends State<ChatInsideScreen> {
           iconTheme: IconThemeData(color: AppColors.whiteColor),
           centerTitle: true,
           title: Text(
-            'Trò chuyện với bác sĩ',
+            'Bác sĩ ${widget.doctor.fullName}',
             style: AppStyles.whiteText,
           ),
         ),
@@ -74,15 +74,25 @@ class _ChatInsideScreenState extends State<ChatInsideScreen> {
           );
         });
   }
+
   //TODO: CODE not ui
   Widget _buildMessageItem(DocumentSnapshot doc) {
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
     bool isCurrentUser = data['emailPaitent'] == UserSingleton().email;
 
-    return Container(
-        alignment: isCurrentUser ? Alignment.centerRight : Alignment.centerLeft,
-        decoration: BoxDecoration(),
-        child: Text(data['content']));
+    return Row(
+      mainAxisAlignment:
+          isCurrentUser ? MainAxisAlignment.end : MainAxisAlignment.start,
+      children: [
+        Container(
+            margin: EdgeInsets.symmetric(vertical: 8.h),
+            padding: EdgeInsets.all(16.w),
+            decoration: BoxDecoration(
+                color: AppColors.blueColor.withOpacity(0.7),
+                borderRadius: BorderRadius.circular(24.r)),
+            child: Text(data['content'])),
+      ],
+    );
   }
 
   Widget _buildUserInput() {

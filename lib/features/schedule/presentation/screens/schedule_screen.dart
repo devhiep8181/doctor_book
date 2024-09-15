@@ -108,11 +108,17 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                                     children: [
                                       Text(
                                           'Bác sĩ: ${state.doctorSchedule[state.listSchedule[index].uidDoctor]?.fullName ?? ''} '),
-                                      CircleAvatar(
-                                        radius: 20.r,
-                                        backgroundColor:
-                                            AppColors.salmonPinkColor,
-                                      ),
+                                     CircleAvatar(
+                                          radius: 35.r,
+                                          backgroundColor:
+                                              AppColors.grey200Color,
+                                          child: CustomImageView(
+                                            width: 80,
+                                            radius:
+                                                BorderRadius.circular(100.r),
+                                            imagePath: state.doctorSchedule[state.listSchedule[index].uidDoctor]?.profilePicture ?? '',
+                                            fit: BoxFit.fill,
+                                          )),
                                     ],
                                   ),
                                   SizedBox(

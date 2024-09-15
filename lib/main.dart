@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor_book/access_firebase_token.dart';
 import 'package:doctor_book/base/notification_service.dart';
 import 'package:doctor_book/common/config/user_singleton.dart';
+import 'package:doctor_book/features/chat/presentation/blocs/chat/chat_bloc.dart';
 import 'package:doctor_book/features/choose_doctor/presentation/blocs/get_doctor/get_doctor_bloc.dart';
 import 'package:doctor_book/features/forgot_password/presentation/blocs/bloc/forgot_password_bloc.dart';
 import 'package:doctor_book/features/home/presentation/blocs/search/search_bloc.dart';
@@ -88,6 +89,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => ForgotPasswordBloc()),
         BlocProvider(create: (_) => ScheduleBloc()),
         BlocProvider(create: (_) => SearchBloc()),
+        BlocProvider(create: (_) => ChatBloc()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

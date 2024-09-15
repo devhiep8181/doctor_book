@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor_book/common/app_theme/app_colors.dart';
 import 'package:doctor_book/common/app_theme/app_styles.dart';
 import 'package:doctor_book/common/config/user_singleton.dart';
@@ -211,12 +212,12 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 List<String> imagePath = [
-  Assets.images.love9062515.path,
+  Assets.images.xRay.path,
   Assets.images.medicalReport8125782.path,
   Assets.images.obstetrics12106197.path,
-  Assets.images.medicalReport8125782.path,
+  Assets.images.surgeryRoom.path,
   Assets.images.love9062515.path,
-  Assets.images.obstetrics12106197.path,
+  Assets.images.mask.path,
 ];
 
 class ServiceWidget extends StatelessWidget {

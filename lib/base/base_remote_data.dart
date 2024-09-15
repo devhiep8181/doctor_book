@@ -75,7 +75,7 @@ class BaseRemoteData {
       print("success!");
     });
   }
-  
+
   Future<void> sendMessage(String emailDoctor, message) async {
     ChatModel newMessage = ChatModel(
         emailPaitent: UserSingleton().email,
@@ -93,6 +93,7 @@ class BaseRemoteData {
 
   Stream<QuerySnapshot> getMessage(String emailDoctor) {
     String chatRoomId = UserSingleton().email + emailDoctor;
+
     return firebaseStore
         .collection("chat")
         .doc(chatRoomId)

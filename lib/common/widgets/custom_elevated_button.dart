@@ -1,6 +1,5 @@
 // Flutter imports:
 import 'package:doctor_book/common/app_theme/app_colors.dart';
-import 'package:doctor_book/common/app_theme/app_styles.dart';
 import 'package:doctor_book/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,11 +44,13 @@ class CustomElevatedButton extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   elevation: 0,
                   foregroundColor: AppColors.whiteColor,
-                  backgroundColor: backgroundColor ?? const Color.fromARGB(255, 28, 215, 150),
+                  backgroundColor: backgroundColor ??
+                      const Color.fromARGB(255, 28, 215, 150),
                   disabledForegroundColor: AppColors.greyColor,
                   disabledBackgroundColor: AppColors.greyColor,
                   //side: BorderSide(color: AppColors.whiteColor),
-                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.r)),
                 ),
@@ -61,8 +62,7 @@ class CustomElevatedButton extends StatelessWidget {
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
                           fontFamily: FontFamily.montserrat,
-                          color: textColor
-                          ),
+                          color: textColor),
                     ))),
       ],
     );

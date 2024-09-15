@@ -90,6 +90,9 @@ class $AssetsImagesGen {
   AssetGenImage get love9062515 =>
       const AssetGenImage('assets/images/love_9062515.png');
 
+  /// File path: assets/images/mask.png
+  AssetGenImage get mask => const AssetGenImage('assets/images/mask.png');
+
   /// File path: assets/images/medical-report_8125782.png
   AssetGenImage get medicalReport8125782 =>
       const AssetGenImage('assets/images/medical-report_8125782.png');
@@ -114,17 +117,27 @@ class $AssetsImagesGen {
   AssetGenImage get placeholder =>
       const AssetGenImage('assets/images/placeholder.png');
 
+  /// File path: assets/images/surgery-room.png
+  AssetGenImage get surgeryRoom =>
+      const AssetGenImage('assets/images/surgery-room.png');
+
+  /// File path: assets/images/x-ray.png
+  AssetGenImage get xRay => const AssetGenImage('assets/images/x-ray.png');
+
   /// List of all assets
   List<dynamic> get values => [
         background,
         logo,
         love9062515,
+        mask,
         medicalReport8125782,
         obstetrics12106197,
         pageViewHome1,
         pageViewHome2,
         pageViewHome3,
-        placeholder
+        placeholder,
+        surgeryRoom,
+        xRay
       ];
 }
 
